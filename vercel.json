@@ -1,0 +1,7 @@
+{
+  "buildCommand": "chmod +x node_modules/.bin/vite || true && npm run build",
+  "installCommand": "npm ci",
+  "framework": "vite",
+  "outputDirectory": "dist",
+  "nodeVersion": "20.x"
+}
