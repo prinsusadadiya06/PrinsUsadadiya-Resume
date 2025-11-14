@@ -12,8 +12,8 @@ export let pr1 = [
         title: "Internet Research Studio",
         role: "Frontend Developer",
         detail: "Designed and structured pages using HTML for content layout and CSS for styling. Developed a responsive and visually appealing website for an Internet Research Studio. Implemented navigation menus, sections for services, and a contact form layout.",
-        btn: "See Code",
-        path: "https://github.com/prinsusadadiya06/InternetReserachStudio-Website",
+        btn: "See Project",
+        path: "https://prinsusadadiya06.github.io/InternetReserachStudio-Website/",
     },
 
     {
@@ -21,8 +21,8 @@ export let pr1 = [
         title: "Rent car Website",
         role: "Frontend Developer",
         detail: "Developed a responsive car rental website allowing users to browse available cars and view rental details.Designed clean and intuitive layouts using HTML for structure and CSS & Bootstrap for styling and responsiveness.Implemented sections such as car listings, booking form, pricing, and contact information.",
-        btn: "See Code",
-        path: "https://github.com/prinsusadadiya06/CarRent-Website",
+        btn: "See Project",
+        path: "https://prinsusadadiya06.github.io/CarRent-Website/",
     },
 
 
@@ -31,8 +31,8 @@ export let pr1 = [
         title: "Flipcart Clone Website ",
         role: "Frontend Developer",
         detail: "Developed a full-featured Flipkart clone with product listing, categories, and search functionality.Designed responsive layouts using React for dynamic UI and Bootstrap/Tailwind CSS for styling.Implemented features such as product cards, navigation bar, carousel, and footer sections to replicate Flipkart’s interface.Built reusable components in React for scalability and maintainability.",
-        btn: "See Code",
-        path: "https://github.com/prinsusadadiya06/FlipcartClone-Website",
+        btn: "See Project",
+        path: "https://prinsusadadiya06.github.io/FlipcartClone-Website/",
     },
 
     {
@@ -40,8 +40,8 @@ export let pr1 = [
         title: "Icecream Website",
         role: "Frontend Developer",
         detail: "Developed a responsive and interactive ice cream website showcasing products and flavors.Designed layouts using HTML for structure and CSS for styling and visual appeal.Added interactivity with JavaScript, including dynamic product displays, image sliders, and hover effects.Implemented sections such as menu, pricing, offers, and contact form for enhanced user experience.",
-        btn: "See Code",
-        path: "https://github.com/prinsusadadiya06/Icecream-Website",
+        btn: "See Project",
+        path: "https://prinsusadadiya06.github.io/Icecream-Website/",
     },
 
     {
@@ -49,8 +49,8 @@ export let pr1 = [
         title: "Amazon Clone Website ",
         role: "Frontend Developer",
         detail: "Developed a fully responsive Amazon-like e-commerce website for product browsing and selection.Styled the website with Bootstrap and CSS for modern, responsive layouts.Implemented navigation menus, product cards, and cart layout to simulate an online shopping experience.Focused on UI/UX design to ensure smooth user interactions.",
-        btn: "See Code",
-        path: "https://github.com/prinsusadadiya06/AmazonClone-Website",
+        btn: "See Project",
+        path: "https://prinsusadadiya06.github.io/AmazonClone-Website/",
     },
 
     {
@@ -58,16 +58,16 @@ export let pr1 = [
         title: "Ninom Fruit Website",
         role: "Frontend Developer",
         detail: "Developed a responsive fruit store website to showcase products and promote online sales.Designed layouts for product listings, pricing, and promotional sections using Bootstrap grids and components.Styled the website with CSS and Bootstrap to ensure a modern and clean user interface.Implemented navigation menus and responsive design for smooth browsing on desktops, tablets, and mobile devices.",
-        btn: "See Code",
-        path: "https://github.com/prinsusadadiya06/NinomFruit-Website",
+        btn: "See Project",
+        path: "https://prinsusadadiya06.github.io/NinomFruit-Website/",
     },
       {
         url:img7,
         title: "Food Portfolio",
         role: "Frontend Developer",
         detail: "Developed a responsive fruit store website to showcase products and promote online sales.Designed layouts for product listings, pricing, and promotional sections using Bootstrap grids and components.Styled the website with CSS and Bootstrap to ensure a modern and clean user interface.Implemented navigation menus and responsive design for smooth browsing on desktops, tablets, and mobile devices.",
-        btn: "See Code",
-        path: "https://github.com/prinsusadadiya06/FoodPortfolio",
+        btn: "See Project",
+        path: "https://prinsusadadiya06.github.io/FoodPortfolio/",
     },
 
 ] 
