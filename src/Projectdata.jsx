@@ -6,6 +6,7 @@ import img5 from '../img/amazon.png'
 import img6 from '../img/ninom.png'
 import img7 from '../img/foodportfolio.png'
 import img8 from '../img/portfolio.png'
+import img9 from '../img/carwashing.png'
 
 export let pr1 = [
     {
@@ -32,6 +33,15 @@ export let pr1 = [
         detail: "Developed a responsive fruit store website to showcase products and promote online sales.Designed layouts for product listings, pricing, and promotional sections using Bootstrap grids and components.Styled the website with CSS and Bootstrap to ensure a modern and clean user interface.Implemented navigation menus and responsive design for smooth browsing on desktops, tablets, and mobile devices.",
         btn: "See Project",
         path: "https://food-portfolio-mauve.vercel.app/",
+    },
+
+    {
+        url: img9,
+        title: "Car Washing",
+        role: "Frontend Developer",
+        detail: "Developed a responsive car washing service website to showcase services and attract customers.Designed sections for service packages, pricing plans, and booking information using modern layout techniques.Styled the interface with CSS and Bootstrap to ensure a clean and professional look.Implemented responsive navigation and optimized the design for mobile, tablet, and desktop devices for smooth user experience.",
+        btn: "See Project",
+        path: "https://car-washing-zeta.vercel.app/", 
     },
 
     {
