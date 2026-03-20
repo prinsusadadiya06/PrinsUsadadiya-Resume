@@ -12,9 +12,9 @@ export let pr1 = [
         url: img8,
         title: "Personal Portfolio",
         role: "Frontend Developer",
-        detail: "Developed a responsive and interactive personal porfolio using next js",
+        detail: "Developed a responsive and interactive personal portfolio website using Next.js and Tailwind CSS. Designed modern and clean layouts with Tailwind CSS for styling and responsiveness. Implemented dynamic features and optimized performance using Next.js, including reusable components and efficient routing. Showcased projects, skills, and experience with dedicated sections such as About, Projects, Skills, Resume, and Contact to provide a smooth and user-friendly experience.",
         btn: "See Project",
-        path: "https://prinsusadadiya06.github.io/prins-portfolio/",
+        path: "https://prins-portfolio-lovat.vercel.app/",
     },
     {
         url: img4,
