@@ -68,7 +68,7 @@ export let pr1 = [
         role: "Frontend Developer",
         detail: "Developed a full-featured Flipkart clone with product listing, categories, and search functionality.Designed responsive layouts using React for dynamic UI and Bootstrap/Tailwind CSS for styling.Implemented features such as product cards, navigation bar, carousel, and footer sections to replicate Flipkart’s interface.Built reusable components in React for scalability and maintainability.",
         btn: "See Project",
-        path: "https://prinsusadadiya06.github.io/FlipcartClone-Website/",
+        path: "https://flipcart-clone-website.vercel.app/",
     },
 
 
