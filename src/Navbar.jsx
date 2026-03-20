@@ -43,15 +43,14 @@ const Navbar = () => {
 
   return (
     <div ref={navbarRef} className="w-full fixed top-0 left-0 bg-white z-30 shadow-sm">
-      <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-        <li className="list-[square] list-inside text-[blue] text-[35px]">
+      <div className="container mx-auto px-4 py-2 flex justify-between items-center">
+        <li className="list-none md:list-[square] md:list-inside md:text-blue-500 text-[35px]">
           <Link to="/">
-            <button className="text-2xl md:text-4xl font-bold no-underline text-black">
+            <button className="text-sm md:text-2xl font-bold no-underline text-black">
               Prins Usadadiya
             </button>
           </Link>
         </li>
-
         {/* Desktop Menu */}
         <div className="hidden md:flex w-[40%] justify-between">
           <Link
@@ -101,34 +100,34 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Menu */}
-   {isOpen && (
-  <div
-    ref={mobileMenuRef}
-    className="fixed top-0 left-0 w-screen h-screen bg-[#f4ece6] z-[999] flex flex-col justify-center items-center space-y-8 transition-all duration-300"
-  >
-    {/* 🔙 Big Close Button */}
-    <button
-      onClick={() => setIsOpen(false)}
-      className="absolute top-6 right-8 text-[80px] leading-none font-bold text-gray-800 hover:text-black transition-transform duration-300 hover:scale-110"
-    >
-     <b className='text-[40px]'>×</b> 
-    </button>
+      {isOpen && (
+        <div
+          ref={mobileMenuRef}
+          className="fixed top-0 left-0 w-screen h-screen bg-[#f4ece6] z-[999] flex flex-col justify-center items-center space-y-8 transition-all duration-300"
+        >
+          {/* 🔙 Big Close Button */}
+          <button
+            onClick={() => setIsOpen(false)}
+            className="absolute top-6 right-8 text-[80px] leading-none font-bold text-gray-800 hover:text-black transition-transform duration-300 hover:scale-110"
+          >
+            <b className='text-[40px]'>×</b>
+          </button>
 
-    {/* Menu Links */}
-    <Link onClick={() => setIsOpen(false)} to="/" className='line text-2xl font-semibold'>
-      ABOUT ME
-    </Link>
-    <Link onClick={() => setIsOpen(false)} to="/resume" className='line text-2xl font-semibold'>
-      RESUME
-    </Link>
-    <Link onClick={() => setIsOpen(false)} to="/project" className='line text-2xl font-semibold'>
-      PROJECTS
-    </Link>
-    <Link onClick={() => setIsOpen(false)} to="/contact" className='line text-2xl font-semibold'>
-      CONTACT
-    </Link>
-  </div>
-)}
+          {/* Menu Links */}
+          <Link onClick={() => setIsOpen(false)} to="/" className='line text-2xl font-semibold'>
+            ABOUT ME
+          </Link>
+          <Link onClick={() => setIsOpen(false)} to="/resume" className='line text-2xl font-semibold'>
+            RESUME
+          </Link>
+          <Link onClick={() => setIsOpen(false)} to="/project" className='line text-2xl font-semibold'>
+            PROJECTS
+          </Link>
+          <Link onClick={() => setIsOpen(false)} to="/contact" className='line text-2xl font-semibold'>
+            CONTACT
+          </Link>
+        </div>
+      )}
 
     </div>
   );
