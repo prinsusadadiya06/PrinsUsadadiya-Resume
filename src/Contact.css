@@ -1,0 +1,101 @@
+
+.container {
+    width: 100%;
+    margin: auto;
+}
+
+@media (min-width: 640px) {
+    .container {
+        max-width: 400px;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 768px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        max-width: 1024px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .container {
+        max-width: 1280px;
+    }
+}
+
+@media (min-width: 1536px) {
+    .container {
+        max-width: 1280px;
+    }
+}
+
+.container-fluid {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+.container-small {
+    width: 100%;
+    margin: auto;
+}
+
+@media (min-width: 640px) {
+    .container-small {
+        max-width: 600px;
+    }
+}
+
+@media (min-width: 768px) {
+    .container-small {
+        max-width: 600px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container-small {
+        max-width: 600px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .container-small {
+        max-width: 600px;
+    }
+}
+
+@media (min-width: 1536px) {
+    .container-small {
+        max-width: 700px;
+    }
+}
+
+.input1 {
+    border: none;
+    border-bottom: 2px solid black;
+}
+
+.btn1 {
+    padding: 8px 30px;
+    background-color: rgb(34, 34, 237);
+    color: white;
+    font-size: 14px;
+    border: 2px solid rgb(34, 34, 237);
+    border-radius: 40px;
+    font-weight: 700;
+    margin-left: 20px;
+}
+
+.btn1:hover {
+    border: 2px solid rgb(34, 34, 237);
+    padding: 8px 30px;
+    background-color: transparent;
+    color: black;
+    transition: 0.5s;
+}
