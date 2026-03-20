@@ -31,7 +31,7 @@ export let pr1 = [
         role: "Frontend Developer",
         detail: "Developed a responsive fruit store website to showcase products and promote online sales.Designed layouts for product listings, pricing, and promotional sections using Bootstrap grids and components.Styled the website with CSS and Bootstrap to ensure a modern and clean user interface.Implemented navigation menus and responsive design for smooth browsing on desktops, tablets, and mobile devices.",
         btn: "See Project",
-        path: "https://prinsusadadiya06.github.io/FoodPortfolio/",
+        path: "https://food-portfolio-mauve.vercel.app/",
     },
 
     {
