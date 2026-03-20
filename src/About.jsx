@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import Navbar from "./Navbar";
-import MyImg from "../img/myimg.JPG";
+import MyImg from "../img/myimg.jpg";
 import Footer from "./Footer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
