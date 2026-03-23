@@ -88,7 +88,7 @@ const About = () => {
               </div>
 
               {/* Social Icons */}
-              <div className="h-[10%] mx-[30px] sm:mx-[0px] bg-white flex justify-center mt-3">
+              <div className="h-[40px] sm:h-[50px] mx-[30px] sm:mx-[0px] bg-white flex items-center justify-center mt-3">
                 <div className="flex items-center justify-between w-[60%]">
                   <a
                     href="#"
