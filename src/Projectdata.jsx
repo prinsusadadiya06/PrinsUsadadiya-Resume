@@ -1,8 +1,8 @@
-import img1 from '../img/researchm4.png'
+// import img1 from '../img/researchm4.png'
+// import img5 from '../img/amazon.png'
+// import img3 from '../img/flipkart.png'
 import img2 from '../img/transport.png'
-import img3 from '../img/flipkart.png'
 import img4 from '../img/icecream.png'
-import img5 from '../img/amazon.png'
 import img6 from '../img/ninom.png'
 import img7 from '../img/foodportfolio.png'
 import img8 from '../img/portfolio.png'
@@ -32,7 +32,7 @@ export let pr1 = [
         role: "Frontend Developer",
         detail: "Developed a responsive fruit store website to showcase products and promote online sales.Designed layouts for product listings, pricing, and promotional sections using Bootstrap grids and components.Styled the website with CSS and Bootstrap to ensure a modern and clean user interface.Implemented navigation menus and responsive design for smooth browsing on desktops, tablets, and mobile devices.",
         btn: "See Project",
-        path: "https://food-portfolio-mauve.vercel.app/",
+        path: "https://food-portfolio-omega.vercel.app/",
     },
 
     {
@@ -41,7 +41,7 @@ export let pr1 = [
         role: "Frontend Developer",
         detail: "Developed a responsive car washing service website to showcase services and attract customers.Designed sections for service packages, pricing plans, and booking information using modern layout techniques.Styled the interface with CSS and Bootstrap to ensure a clean and professional look.Implemented responsive navigation and optimized the design for mobile, tablet, and desktop devices for smooth user experience.",
         btn: "See Project",
-        path: "https://car-washing-zeta.vercel.app/", 
+        path: "https://car-washing-zeta.vercel.app/",
     },
 
     {
@@ -53,14 +53,14 @@ export let pr1 = [
         path: "https://ninomfruit-website.vercel.app/",
     },
 
-    {
-        url: img1,
-        title: "Internet Research Studio",
-        role: "Frontend Developer",
-        detail: "Designed and structured pages using HTML for content layout and CSS for styling. Developed a responsive and visually appealing website for an Internet Research Studio. Implemented navigation menus, sections for services, and a contact form layout.",
-        btn: "See Project",
-        path: "https://internetresearchstudio-website.vercel.app/",
-    },
+    // {
+    //     url: img1,
+    //     title: "Internet Research Studio",
+    //     role: "Frontend Developer",
+    //     detail: "Designed and structured pages using HTML for content layout and CSS for styling. Developed a responsive and visually appealing website for an Internet Research Studio. Implemented navigation menus, sections for services, and a contact form layout.",
+    //     btn: "See Project",
+    //     path: "https://internetresearchstudio-website.vercel.app/",
+    // },
 
     {
         url: img2,
@@ -72,23 +72,21 @@ export let pr1 = [
     },
 
 
-    {
-        url: img3,
-        title: "Flipcart Clone Website ",
-        role: "Frontend Developer",
-        detail: "Developed a full-featured Flipkart clone with product listing, categories, and search functionality.Designed responsive layouts using React for dynamic UI and Bootstrap/Tailwind CSS for styling.Implemented features such as product cards, navigation bar, carousel, and footer sections to replicate Flipkart’s interface.Built reusable components in React for scalability and maintainability.",
-        btn: "See Project",
-        path: "https://flipcart-clone-website.vercel.app/",
-    },
+    // {
+    //     url: img3,
+    //     title: "Flipcart Clone Website ",
+    //     role: "Frontend Developer",
+    //     detail: "Developed a full-featured Flipkart clone with product listing, categories, and search functionality.Designed responsive layouts using React for dynamic UI and Bootstrap/Tailwind CSS for styling.Implemented features such as product cards, navigation bar, carousel, and footer sections to replicate Flipkart’s interface.Built reusable components in React for scalability and maintainability.",
+    //     btn: "See Project",
+    //     path: "https://flipcart-clone-website.vercel.app/",
+    // },
 
-
-
-    {
-        url: img5,
-        title: "Amazon Clone Website ",
-        role: "Frontend Developer",
-        detail: "Developed a fully responsive Amazon-like e-commerce website for product browsing and selection.Styled the website with Bootstrap and CSS for modern, responsive layouts.Implemented navigation menus, product cards, and cart layout to simulate an online shopping experience.Focused on UI/UX design to ensure smooth user interactions.",
-        btn: "See Project",
-        path: "https://amazonclone-website.vercel.app/",
-    },
+    // {
+    //     url: img5,
+    //     title: "Amazon Clone Website ",
+    //     role: "Frontend Developer",
+    //     detail: "Developed a fully responsive Amazon-like e-commerce website for product browsing and selection.Styled the website with Bootstrap and CSS for modern, responsive layouts.Implemented navigation menus, product cards, and cart layout to simulate an online shopping experience.Focused on UI/UX design to ensure smooth user interactions.",
+    //     btn: "See Project",
+    //     path: "https://amazonclone-website.vercel.app/",
+    // },
 ] 
