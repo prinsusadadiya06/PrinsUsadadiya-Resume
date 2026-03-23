@@ -105,7 +105,7 @@ const Navbar = () => {
           ref={mobileMenuRef}
           className="fixed top-0 left-0 w-screen h-screen bg-[#f4ece6] z-[999] flex flex-col justify-center items-center space-y-8 transition-all duration-300"
         >
-          {/* 🔙 Big Close Button */}
+          {/* Big Close Button */}
           <button
             onClick={() => setIsOpen(false)}
             className="absolute top-6 right-8 text-[80px] leading-none font-bold text-gray-800 hover:text-black transition-transform duration-300 hover:scale-110"

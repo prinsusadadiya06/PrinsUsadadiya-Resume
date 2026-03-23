@@ -5,81 +5,76 @@ import Navbar from './Navbar';
 import Footer from './Footer';
 import { pr1 } from './Projectdata';
 
-// Register ScrollTrigger plugin
+
 gsap.registerPlugin(ScrollTrigger);
 
 const Project = () => {
     
-    // Ref for the main heading
     const mainTitleRef = useRef(null); 
-    // Array to store refs for all project box containers
     const projectContainersRef = useRef([]);
 
-    // Clear ref array before rendering
+   
     projectContainersRef.current = [];
 
-    // Helper function to add ref to the array during map
+    
     const addToProjectRefs = (el) => {
         if (el) {
             projectContainersRef.current.push(el);
         }
     };
     
-    useLayoutEffect(() => {
-        const ctx = gsap.context(() => {
-            
-            // --- Global Styles: Prevent content jump by hiding animated items initially ---
-            // Hide the main heading and the info paragraph
-            gsap.set([mainTitleRef.current, ".project-info-text"], { opacity: 0, y: 30 });
+useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
 
-            // --- Main Heading Animation (Runs once on load) ---
-            gsap.to([mainTitleRef.current, ".project-info-text"], {
-                y: 0,
-                opacity: 1,
-                duration: 1,
-                ease: "power3.out",
-                stagger: 0.1,
-                delay: 0.3,
+        gsap.set([mainTitleRef.current, ".project-info-text"], { 
+            opacity: 0, 
+            y: 30 
+        });
+
+        gsap.to([mainTitleRef.current, ".project-info-text"], {
+            y: 0,
+            opacity: 1,
+            duration: 0.8, 
+            ease: "power3.out",
+            stagger: 0.1,
+        });
+
+        
+        projectContainersRef.current.forEach((container) => {
+
+            gsap.set(container, {
+                opacity: 0,
+                rotationX: 90,
+                transformPerspective: 1000,
+                z: -150,   
+                y: 40,
             });
 
-            // --- Individual Project Box Animations (3D Tilt and Lift) ---
-            projectContainersRef.current.forEach((container) => {
-
-                // Set initial state: transparent, tilted back (rotationX), lifted back (z), and slightly low (y)
-                gsap.set(container, {
-                    opacity: 0,
-                    rotationX: 90, // Tilted 90 degrees backward (hidden)
-                    transformPerspective: 1000, // Necessary for 3D effects
-                    z: -200, // Pushed 200px back in the z-axis
-                    y: 50, // Starts 50px below final position
-                });
-
-                // Animate to final state: flat, no z-depth, full opacity, and final position
-                gsap.to(container, {
-                    opacity: 1,
-                    rotationX: 0, // Rotates to flat position
-                    z: 0, // Brings it forward to the plane
-                    y: 0, // Lifts it to the final vertical position
-                    duration: 1.2,
-                    ease: "power3.out",
-                    scrollTrigger: {
-                        trigger: container,
-                        start: "top 90%", // Start animation slightly earlier
-                        toggleActions: "play none none none",
-                    }
-                });
+            gsap.to(container, {
+                opacity: 1,
+                rotationX: 0,
+                z: 0,
+                y: 0,
+                duration: 1,
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: container,
+                    start: "top 85%",  
+                    toggleActions: "play none none none",
+                }
             });
         });
 
-        // Cleanup function for GSAP context
-        return () => ctx.revert(); 
-    }, []);
+    });
+
+    return () => ctx.revert();
+}, []);
 
     return (
         <>
             <Navbar />
 
-            <div className='bg-[#e6dace] sm:pt-[170px] pt-[40px] sm:pb-[80px]'>
+           <div className='bg-[#e6dace] overflow-x-hidden sm:pt-[170px] pt-[40px] sm:pb-[80px]'>
                 <div className=' text-[30px] font-bold text-center mt-[90px] '>
                     <li ref={mainTitleRef} className='list-[square] list-inside text-[blue] text-[35px]'>
                         <span className='text-black '>Projects</span>
@@ -94,9 +89,9 @@ const Project = () => {
                 {/* Project boxes container */}
                 {pr1.map((v, i) => {
                     return (
-                        // Assign ref to the parent container div
+                    
                         <div key={i} ref={addToProjectRefs} className="flex justify-center sm:pt-[65px] sm:mb-[0px] mb-[60px]">
-                            <div className='sm:w-[750px] sm:h-[400px] sm:flex'>
+                           <div className='w-full max-w-[750px] sm:h-[400px] sm:flex'>
                                 
                                 {/* Info Box */}
                                 <div className='bg-white sm:w-[60%] sm:h-[100%] pb-[30px] shadow-lg shadow-black '>
@@ -116,7 +111,7 @@ const Project = () => {
                                 </div>
                                 
                                 {/* Image Box */}
-                                <div className='bg-gray-300 sm:w-[40%] h-[300px] sm:h-[100%] overflow-y-scroll' style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+                                <div className='bg-gray-300 sm:w-[40%] h-[300px] sm:h-[100%] overflow-y-scroll overflow-x-hidden' style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
                                     <img src={v.url} alt={`Screenshot of ${v.title}`} className='w-[100%]' />
                                 </div>
                             </div>

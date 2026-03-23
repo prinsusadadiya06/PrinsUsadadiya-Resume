@@ -5,18 +5,16 @@ import Navbar from './Navbar';
 import Footer from './Footer';
 import "./Contact.css";
 
-// Register ScrollTrigger plugin
+
 gsap.registerPlugin(ScrollTrigger);
 
 const Contact = () => {
 
-    // Refs for animation targets
     const titleRef = useRef(null);
     const formContainerRef = useRef(null);
-    const formFieldsRef = useRef([]); // To hold refs for each field div
-    const sendButtonRef = useRef(null); // Ref for the submit button
+    const formFieldsRef = useRef([]); 
+    const sendButtonRef = useRef(null);
 
-    // State for form data (unchanged)
     let [formdata, setFormdata] = useState({
         name: "",
         lname: "",
@@ -25,7 +23,6 @@ const Contact = () => {
         message: ""
     });
 
-    // Function to handle changes in input fields (unchanged)
     let changeInput = (event) => {
         setFormdata(prevData => ({
             ...prevData,
@@ -33,7 +30,6 @@ const Contact = () => {
         }));
     };
 
-    // Function to handle form submission (unchanged)
     let send = (event) => {
         event.preventDefault();
         
@@ -57,7 +53,6 @@ const Contact = () => {
         }
     };
 
-    // Helper to collect refs for field animations
     const addToFieldsRef = (el) => {
         if (el) {
             formFieldsRef.current.push(el);
@@ -69,9 +64,6 @@ const Contact = () => {
     useLayoutEffect(() => {
         const ctx = gsap.context(() => {
             
-            // 1. Initial Animation: Title (runs once on load)
-            
-            // Title Animation (Fade Up)
             gsap.from(titleRef.current.parentElement, {
                 y: -50,
                 opacity: 0,
@@ -80,16 +72,13 @@ const Contact = () => {
                 delay: 0.3,
             });
 
-            // 2. Form Container: Perspective Zoom-In
-            // Set initial state: transparent, scaled down, and slightly tilted
             gsap.set(formContainerRef.current, { 
                 opacity: 0, 
                 scale: 0.8,
-                rotationX: 15, // Slight tilt for perspective
-                transformPerspective: 1000, // Enables 3D transform
+                rotationX: 15, 
+                transformPerspective: 1000,
             });
 
-            // Animate the main form container in
             const mainFormTL = gsap.timeline({
                 scrollTrigger: {
                     trigger: formContainerRef.current,
@@ -106,33 +95,26 @@ const Contact = () => {
                 ease: "power3.out",
             });
 
-
-            // 3. Staggered Animation for individual form fields (Magnetic Stagger)
-            
-            // Set initial state for all field groups: transparent and positioned away from the center (scale down)
             gsap.set(formFieldsRef.current, { 
                 opacity: 0, 
                 scale: 0.5,
-                transformOrigin: "center center", // Crucial for scale from center
+                transformOrigin: "center center", 
             });
 
-            // Animate the field groups with a stagger
             mainFormTL.to(formFieldsRef.current, {
                 opacity: 1,
                 scale: 1,
                 duration: 0.7,
-                stagger: 0.1, // Small delay between each field group
-                ease: "back.out(1.2)", // Use a "back" ease for a slight magnetic pull/pop effect
-            }, "-=0.5"); // Start this immediately before the main container animation finishes
+                stagger: 0.1, 
+                ease: "back.out(1.2)", 
+            }, "-=0.5");
 
-            
-            // 4. Send Button Animation (Delay after fields)
             gsap.from(sendButtonRef.current, {
                 opacity: 0,
                 y: 20,
                 duration: 0.5,
                 ease: "power2.out",
-                delay: 2, // Delay the button reveal until all fields are shown
+                delay: 2, 
                 scrollTrigger: {
                     trigger: formContainerRef.current,
                     start: "top 70%", 
@@ -155,11 +137,11 @@ const Contact = () => {
                     <span className='text-[38px] text-black font-bold pt-[100px]'>Let's talk</span>
                 </div>
                 
-                {/* Form Container with Ref */}
+                {/* Form Container */}
                 <div ref={formContainerRef} className="container-small py-[70px] px-[40px] bg-white">
                     <form onSubmit={send} className='font-bold text-[14px]'> 
                         
-                        {/* Frist row - This is one animation group (index 0) */}
+                        {/* Frist row */}
                         <div ref={addToFieldsRef} className="flex flex-col sm:flex-row justify-between">
                             <div className='sm:w-[45%] sm:ps-[20px]'>
                                 <label htmlFor="name">Frist Name*</label>
@@ -186,7 +168,7 @@ const Contact = () => {
                         </div>
                         <br />
                         
-                        {/* Email Row - Animation group (index 1) */}
+                        {/* Email Row */}
                         <div ref={addToFieldsRef} className='sm:px-[20px]'>
                             <label htmlFor="email">Email*</label>
                             <br /><br />
@@ -200,7 +182,7 @@ const Contact = () => {
                         </div>
                         <br />
                         
-                        {/* Subject Row - Animation group (index 2) */}
+                        {/* Subject Row */}
                         <div ref={addToFieldsRef} className='sm:px-[20px]'>
                             <label htmlFor="sub">Subject*</label>
                             <br /><br />
@@ -214,7 +196,7 @@ const Contact = () => {
                         </div>
                         <br />
                         
-                        {/* Message Row - Animation group (index 3) */}
+                        {/* Message Row */}
                         <div ref={addToFieldsRef} className='sm:px-[20px]'>
                             <label htmlFor="message">Message*</label>
                             <br /><br />
@@ -227,7 +209,7 @@ const Contact = () => {
                         </div>
                         <br />
                         
-                        {/* Send Button - Now using its own ref */}
+                        {/* Send Button */}
                         <button className='btn1' ref={sendButtonRef} type="submit">Send</button> 
                     </form>
                 </div>

@@ -28,22 +28,21 @@ const About = () => {
   };
 
   useEffect(() => {
-    // 1. **Set Initial States (Crucial for refresh fix)**
-    // Instantly set the elements to their start positions/opacity before the animation runs
+  
     gsap.set(profileRef.current, { x: -200, opacity: 0 });
     gsap.set(imgRef.current, { scale: 0, opacity: 0 });
     gsap.set(textRef.current, { x: 200, opacity: 0 });
     gsap.set(socialRef.current, { y: 20, opacity: 0 });
-    // Assuming the buttons start at y: 10, opacity: 0
+   
     if (buttonContainerRef.current) {
         gsap.set(buttonContainerRef.current.children, { y: 10, opacity: 0 });
     }
 
 
-    // 2. **Run the Timeline Animation**
+  
     const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
 
-    tl.to(profileRef.current, { x: 0, opacity: 1, duration: 1 }) // Animate to final state
+    tl.to(profileRef.current, { x: 0, opacity: 1, duration: 1 }) 
       .to(
         imgRef.current,
         { scale: 1, opacity: 1, duration: 0.8, ease: "back.out(1.7)" },
@@ -60,10 +59,6 @@ const About = () => {
         { y: 0, opacity: 1, stagger: 0.2, duration: 0.8, ease: "back.out(1.7)" },
         "-=0.4"
       );
-    
-    // NOTE: I changed .from() to .to() because we are now setting the start state 
-    // explicitly with gsap.set(). Using .to() with the final state (x: 0, opacity: 1)
-    // is often cleaner when initial states are pre-set.
 
   }, []);
 
@@ -134,7 +129,7 @@ const About = () => {
             >
               <h1 className="text-[80px]">Hello</h1>
               <p className="text-[25px] pt-3">Here's Who I am & what I do</p>
-              {/* Button Container with new ref */}
+              {/* Button Container */}
               <div className="text-[15px] mt-8" ref={buttonContainerRef}> 
                 <Link to={"/resume"}>
                   <button className="mt-3 px-4 py-2 btn1">RESUME</button>

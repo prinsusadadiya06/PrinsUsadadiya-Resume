@@ -5,22 +5,20 @@ import Navbar from './Navbar';
 import Footer from './Footer';
 import { educationdetail, resumedetail } from './Resumedata';
 
-// Register ScrollTrigger plugin
+
 gsap.registerPlugin(ScrollTrigger);
 
 const Resume = () => {
-    // Refs for the main sections to animate
+    
     const experienceRef = useRef(null);
     const educationRef = useRef(null);
     const skillsRef = useRef(null);
     const resumeBoxesRef = useRef([]);
     const educationBoxesRef = useRef([]);
 
-    // Clear refs before each render phase (important for arrays in map)
     resumeBoxesRef.current = [];
     educationBoxesRef.current = [];
 
-    // Helper functions to add ref to the arrays
     const addToResumeRefs = (el) => {
         if (el) {
             resumeBoxesRef.current.push(el);
@@ -33,11 +31,10 @@ const Resume = () => {
         }
     };
     
-    // useLayoutEffect for GSAP animations to run before browser paint
+   
     useLayoutEffect(() => {
         const ctx = gsap.context(() => {
 
-            // --- Main Heading Animation (Runs once on load) ---
             gsap.from(".resume-title-item", {
                 y: -50,
                 opacity: 0,
@@ -46,7 +43,6 @@ const Resume = () => {
                 delay: 0.3, 
             });
 
-            // 1. Experience Section Title
             if (experienceRef.current) {
                 gsap.from(experienceRef.current.children, { 
                     opacity: 0,
@@ -61,7 +57,6 @@ const Resume = () => {
                 });
             }
 
-            // 2. Animate individual resume boxes (Alternating Slide-In - Kept clean)
             resumeBoxesRef.current.forEach((box, i) => {
                 const isEven = i % 2 === 0;
                 
@@ -81,7 +76,6 @@ const Resume = () => {
             });
 
 
-            // 3. Education Section Title
             if (educationRef.current) {
                 gsap.from(educationRef.current, {
                     opacity: 0,
@@ -96,7 +90,6 @@ const Resume = () => {
                 });
             }
 
-            // 4. Animate individual education boxes (Alternating Slide-In - Kept clean)
             educationBoxesRef.current.forEach((box, i) => {
                 const isEven = i % 2 === 0;
                 
@@ -115,10 +108,7 @@ const Resume = () => {
                 });
             });
 
-
-            // 5. Advanced Skills Section Animation (Staggered Scale-In)
             if (skillsRef.current) {
-                // Animate the whole skills box container (fade up slightly)
                 gsap.from(skillsRef.current, {
                     opacity: 0,
                     y: 50,
@@ -131,25 +121,23 @@ const Resume = () => {
                     }
                 });
                 
-                // Animate all the list items inside the skills box
-                // We target all <li> elements within the skillsRef container
+               
                 gsap.from(skillsRef.current.querySelectorAll('li'), {
-                    scaleX: 0, // Start scaled horizontally to 0 (hidden)
+                    scaleX: 0, 
                     opacity: 0,
-                    transformOrigin: "left center", // Ensure scaling starts from the left edge
+                    transformOrigin: "left center", 
                     duration: 0.8,
-                    stagger: 0.08, // Small delay between each skill item
-                    ease: "back.out(1.7)", // Fun, springy effect
+                    stagger: 0.08, 
+                    ease: "back.out(1.7)", 
                     scrollTrigger: {
                         trigger: skillsRef.current,
-                        start: "top 60%", // Start the skill animation once the skills box is fully visible
+                        start: "top 60%", 
                         toggleActions: "play none none none",
                     }
                 });
             }
         });
 
-        // Cleanup function for GSAP context
         return () => ctx.revert(); 
     }, []);
 
@@ -174,7 +162,7 @@ const Resume = () => {
                             download className='mt-3 px-4 py-2 btn1'>DOWNLOAD CV</a>
                     </div>
 
-                    {/* Experience boxes (Alternating slide-in from left/right) */}
+                    {/* Experience boxes  */}
                     {
                         resumedetail.map((v, i) => {
                             return (
@@ -198,7 +186,7 @@ const Resume = () => {
                     {/* --- Education Section --- */}
                     <div ref={educationRef} className='text-[30px] font-bold container-small pt-[90px]'>Education</div>
 
-                    {/* Education boxes (Alternating slide-in from left/right) */}
+                    {/* Education boxes */}
                     {
                         educationdetail.map((v, i) => {
                             return (
@@ -221,14 +209,12 @@ const Resume = () => {
 
 
                     {/* --- Skills Section --- */}
-                    {/* The list items within this box will have the new animation */}
                     <div ref={skillsRef} className="box1 bg-white sm:h-[500px] sm:w-[670px] mt-15 shadow-lg shadow-black pb-[30px]">
                         <p className='text-[25px] font-bold ps-5 pt-[40px] '>
                             Skills</p>
 
                         <div className="flex sm:w-[70%] flex-wrap">
                             <div>
-                                {/* Targeting these <li> elements for staggered scaleX animation */}
                                 <li className='list-[square] list-inside text-[blue] text-[15px] ps-5'><span className='text-black text-[13px]'>Html</span></li>
                                 <li className='list-[square] list-inside text-[blue] text-[15px] ps-5 pt-[5px]'><span className='text-black text-[13px]'>CSS</span></li>
                                 <li className='list-[square] list-inside text-[blue] text-[15px] ps-5 pt-[5px]'><span className='text-black text-[13px]'>Javascript</span></li>

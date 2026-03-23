@@ -8,17 +8,14 @@ const Footer = () => {
     const iconsRef = useRef([]);
 
     useEffect(() => {
-        // Create a GSAP context for React
         let ctx = gsap.context(() => {
-            // Animate the whole footer
+          
             gsap.from(footerRef.current, {
                 opacity: 0,
                 y: 50,
                 duration: 1.2,
                 ease: "power3.out"
             });
-
-            // Animate each text block
             gsap.from(".text-block", {
                 opacity: 0,
                 y: 30,
@@ -27,7 +24,6 @@ const Footer = () => {
                 stagger: 0.2
             });
 
-            // Animate icons with bounce + stagger
             gsap.from(iconsRef.current, {
                 opacity: 0,
                 scale: 0.5,
@@ -37,7 +33,7 @@ const Footer = () => {
             });
         }, footerRef);
 
-        return () => ctx.revert(); // cleanup on unmount
+        return () => ctx.revert();
     }, []);
 
     return (
