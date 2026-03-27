@@ -9,7 +9,7 @@ import { educationdetail, resumedetail } from './Resumedata';
 gsap.registerPlugin(ScrollTrigger);
 
 const Resume = () => {
-    
+
     const experienceRef = useRef(null);
     const educationRef = useRef(null);
     const skillsRef = useRef(null);
@@ -30,8 +30,8 @@ const Resume = () => {
             educationBoxesRef.current.push(el);
         }
     };
-    
-   
+
+
     useLayoutEffect(() => {
         const ctx = gsap.context(() => {
 
@@ -40,11 +40,11 @@ const Resume = () => {
                 opacity: 0,
                 duration: 0.8,
                 ease: "power3.out",
-                delay: 0.3, 
+                delay: 0.3,
             });
 
             if (experienceRef.current) {
-                gsap.from(experienceRef.current.children, { 
+                gsap.from(experienceRef.current.children, {
                     opacity: 0,
                     y: 30,
                     duration: 1,
@@ -59,9 +59,9 @@ const Resume = () => {
 
             resumeBoxesRef.current.forEach((box, i) => {
                 const isEven = i % 2 === 0;
-                
+
                 gsap.set(box, { opacity: 0, x: isEven ? -200 : 200 });
-                
+
                 gsap.to(box, {
                     opacity: 1,
                     x: 0,
@@ -92,9 +92,9 @@ const Resume = () => {
 
             educationBoxesRef.current.forEach((box, i) => {
                 const isEven = i % 2 === 0;
-                
+
                 gsap.set(box, { opacity: 0, x: isEven ? -200 : 200 });
-                
+
                 gsap.to(box, {
                     opacity: 1,
                     x: 0,
@@ -120,61 +120,72 @@ const Resume = () => {
                         toggleActions: "play none none none",
                     }
                 });
-                
-               
+
+
                 gsap.from(skillsRef.current.querySelectorAll('li'), {
-                    scaleX: 0, 
+                    scaleX: 0,
                     opacity: 0,
-                    transformOrigin: "left center", 
+                    transformOrigin: "left center",
                     duration: 0.8,
-                    stagger: 0.08, 
-                    ease: "back.out(1.7)", 
+                    stagger: 0.08,
+                    ease: "back.out(1.7)",
                     scrollTrigger: {
                         trigger: skillsRef.current,
-                        start: "top 60%", 
+                        start: "top 60%",
                         toggleActions: "play none none none",
                     }
                 });
             }
         });
 
-        return () => ctx.revert(); 
+        return () => ctx.revert();
     }, []);
 
-    
+
     return (
         <>
             <Navbar />
 
-            <div className='bg-[#e6dace] pt-[270px] pb-[90px]'>
+            <div className='bg-[#e6dace] md:pt-[170px] pt-[100px] pb-[50px]'>
                 <div className=' text-[30px] font-bold text-center '>
                     <li className='list-[square] list-inside text-[blue] text-[35px] resume-title-item'>
                         <span className='text-black'>Resume</span>
                     </li>
                 </div>
 
-                <div className="container-small pt-[90px]">
-                    
+                <div className="container-small sm:pt-[90px] pt-2">
+
                     {/* --- Experience Section --- */}
-                    <div ref={experienceRef} className='flex items-center justify-between'>
-                        <p className='text-[30px] font-bold'>Experience</p>
-                        <a href="Prins_Usadadiya Resume.pdf"
-                            download className='mt-3 px-4 py-2 btn1'>DOWNLOAD CV</a>
+                    <div
+                        ref={experienceRef}
+                        className="flex items-center justify-between px-2 sm:px-0 mt-4"
+                    >
+                        <p className="text-[22px] sm:text-[30px] font-bold">
+                            Experience
+                        </p>
+
+                        <a
+                            href="Prins_Usadadiya Resume.pdf"
+                            download
+                            className="px-4 py-2 btn1 text-sm sm:text-base"
+                        >
+                            DOWNLOAD CV
+                        </a>
                     </div>
 
                     {/* Experience boxes  */}
                     {
                         resumedetail.map((v, i) => {
                             return (
-                                <div key={`exp-${i}`} ref={addToResumeRefs} className="box1 bg-white sm:h-[350px] sm:w-[670px] mt-15 shadow-lg shadow-black">
+                                <div key={`exp-${i}`} ref={addToResumeRefs} className="box1 rounded-md bg-white sm:h-[350px] sm:w-[670px] mt-10 shadow-lg shadow-black">
                                     <div className="sm:flex py-[20px] sm:py-[0px]">
-                                        <div>
-                                            <p className='text-[25px] font-bold text-[blue] px-[20px] sm:ps-5 sm:pt-[80px]'>{v.title}</p>
-                                            <p className='px-[20px] sm:ps-5 text-[15px]'><b>{v.position}</b></p>
-                                            <p className='px-[20px] sm:ps-5 text-[15px]'>{v.cname}</p>
-                                            <p className='text-[10px] px-[20px] sm:ps-5'>{v.duration}</p>
+                                        <div  className='w-[35%]'>
+                                            <p className='text-[20px] font-bold text-[blue] px-[25px] sm:pt-[80px]'>{v.title}</p>
+                                            <p className='px-[25px] text-[12px]'><b>{v.position}</b></p>
+                                            <p className='px-[25px] text-[12px]'>{v.cname}</p>
+                                            {/* <p className='text-[10px] px-[20px]'>{v.duration}</p> */}
                                         </div>
-                                        <div className="sm:ps-5 px-[20px] sm:pt-[130px] sm:w-[65%] sm:pe-[30px]">
+                                        <div className="sm:ps-5 px-[20px] sm:pt-[126px] sm:w-[50%] sm:ms-[40px]">
                                             <p>{v.resumeinfo}</p>
                                         </div>
                                     </div>
@@ -184,21 +195,21 @@ const Resume = () => {
                     }
 
                     {/* --- Education Section --- */}
-                    <div ref={educationRef} className='text-[30px] font-bold container-small pt-[90px]'>Education</div>
+                    <div ref={educationRef} className='text-[30px] font-bold  pt-[40px] '>Education</div>
 
                     {/* Education boxes */}
                     {
                         educationdetail.map((v, i) => {
                             return (
-                                <div key={`edu-${i}`} ref={addToEducationRefs} className="box1 bg-white sm:h-[350px] sm:w-[670px] mt-15 shadow-lg shadow-black">
+                                <div key={`edu-${i}`} ref={addToEducationRefs} className="box1  rounded-md bg-white sm:h-[350px] sm:w-[670px] mt-10 shadow-lg shadow-black">
                                     <div className="sm:flex py-[20px] sm:py-[0px]">
-                                        <div>
-                                            <p className='text-[25px] font-bold text-[blue] ps-[20px] sm:ps-5 sm:pt-[80px]'>{v.clgtitle}</p>
-                                            <p className='ps-[20px] sm:ps-5 text-[15px]'>{v.universatyname}</p>
-                                            <p className='text-[10px] ps-[20px] sm:ps-5'>{v.degree}</p>
-                                            <p className='text-[10px] ps-[20px] sm:ps-5'>{v.universatylocation}</p>
+                                        <div className='w-[35%]'>
+                                            <p className='text-[25px] font-bold text-[blue] ps-[25px] sm:ps-5 sm:pt-[80px]'>{v.clgtitle}</p>
+                                            <p className='ps-[25px]  text-[15px]'>{v.universatyname}</p>
+                                            <p className='text-[15px] ps-[25px] '>{v.degree}</p>
+                                            <p className='text-[15px] ps-[25px]'>{v.universatylocation}</p>
                                         </div>
-                                        <div className="px-[20px] sm:ps-2 sm:pt-[130px] sm:w-[45%] sm:ms-[50px]">
+                                        <div className="px-[20px] sm:pt-[130px] sm:w-[50%] sm:ms-[40px]">
                                             <p>{v.uniinfo}</p>
                                         </div>
                                     </div>
@@ -209,7 +220,7 @@ const Resume = () => {
 
 
                     {/* --- Skills Section --- */}
-                    <div ref={skillsRef} className="box1 bg-white sm:h-[500px] sm:w-[670px] mt-15 shadow-lg shadow-black pb-[30px]">
+                    <div ref={skillsRef} className="box1  rounded-md bg-white sm:h-[500px] sm:w-[670px] mt-10 shadow-lg shadow-black pb-[30px]">
                         <p className='text-[25px] font-bold ps-5 pt-[40px] '>
                             Skills</p>
 
@@ -218,12 +229,14 @@ const Resume = () => {
                                 <li className='list-[square] list-inside text-[blue] text-[15px] ps-5'><span className='text-black text-[13px]'>Html</span></li>
                                 <li className='list-[square] list-inside text-[blue] text-[15px] ps-5 pt-[5px]'><span className='text-black text-[13px]'>CSS</span></li>
                                 <li className='list-[square] list-inside text-[blue] text-[15px] ps-5 pt-[5px]'><span className='text-black text-[13px]'>Javascript</span></li>
+                                <li className='list-[square] list-inside text-[blue] text-[15px] ps-5 pt-[5px]'><span className='text-black text-[13px]'>Typescript</span></li>
                                 <li className='list-[square] list-inside text-[blue] text-[15px] ps-5 pt-[5px]'><span className='text-black text-[13px]'>Bootstrap</span></li>
                                 <li className='list-[square] list-inside text-[blue] text-[15px] ps-5 pt-[5px]'><span className='text-black text-[13px]'>TailwindCSS</span></li>
                             </div>
 
                             <div>
                                 <li className='list-[square] list-inside text-[blue] text-[15px] ps-5 '><span className='text-black text-[13px]'>React.JS</span></li>
+                                <li className='list-[square] list-inside text-[blue] text-[15px] ps-5 pt-[5px] '><span className='text-black text-[13px]'>Next.JS</span></li>
                                 <li className='list-[square] list-inside text-[blue] text-[15px] ps-5 pt-[5px]'><span className='text-black text-[13px]'>Express.JS</span></li>
                                 <li className='list-[square] list-inside text-[blue] text-[15px] ps-5 pt-[5px]'><span className='text-black text-[13px]'>Node.JS</span></li>
                                 <li className='list-[square] list-inside text-[blue] text-[15px] ps-5 pt-[5px]'><span className='text-black text-[13px]'>MongoDb</span></li>

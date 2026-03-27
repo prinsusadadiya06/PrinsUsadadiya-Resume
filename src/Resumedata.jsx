@@ -1,11 +1,11 @@
 export let resumedetail = [
 
     {
-        title: "2025 - Present",
-        position: "MERN Stack Developer Intern",
-        cname: "Amar Infotech",
-        duration: "May 2025- Dec 2025",
-        resumeinfo: "Developed full-stack website using MongoDB, Express.js, React, Node.js. Built RESTful APIs and integrated them with frontend React components.Designed responsive and user-friendly UI using CSS, Bootstrap, and Tailwind CSS.Collaborated in a team environment, participated in code reviews, and followed Git/GitHub workflow.",
+        title: "Dec 2025 – Present",
+        position: "MERN Stack Developer",
+        cname: "Lembits Technolab Pvt. Ltd",
+        // duration: "May 2025- Dec 2025",
+        resumeinfo: "Developed full-stack web apps using MongoDB, Express.js, React, Node.js, Next.js, and TypeScript. Built REST APIs and integrated them with frontend. Designed responsive UI using CSS, Bootstrap, and Tailwind CSS. Worked in team, followed Git/GitHub workflow.",
     },
 
 

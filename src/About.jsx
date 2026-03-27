@@ -28,21 +28,21 @@ const About = () => {
   };
 
   useEffect(() => {
-  
+
     gsap.set(profileRef.current, { x: -200, opacity: 0 });
     gsap.set(imgRef.current, { scale: 0, opacity: 0 });
     gsap.set(textRef.current, { x: 200, opacity: 0 });
     gsap.set(socialRef.current, { y: 20, opacity: 0 });
-   
+
     if (buttonContainerRef.current) {
-        gsap.set(buttonContainerRef.current.children, { y: 10, opacity: 0 });
+      gsap.set(buttonContainerRef.current.children, { y: 10, opacity: 0 });
     }
 
 
-  
+
     const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
 
-    tl.to(profileRef.current, { x: 0, opacity: 1, duration: 1 }) 
+    tl.to(profileRef.current, { x: 0, opacity: 1, duration: 1 })
       .to(
         imgRef.current,
         { scale: 1, opacity: 1, duration: 0.8, ease: "back.out(1.7)" },
@@ -130,7 +130,7 @@ const About = () => {
               <h1 className="text-[80px]">Hello</h1>
               <p className="text-[25px] pt-3">Here's Who I am & what I do</p>
               {/* Button Container */}
-              <div className="text-[15px] mt-8" ref={buttonContainerRef}> 
+              <div className="text-[15px] mt-8" ref={buttonContainerRef}>
                 <Link to={"/resume"}>
                   <button className="mt-3 px-4 py-2 btn1">RESUME</button>
                 </Link>
@@ -140,16 +140,12 @@ const About = () => {
               </div>
               <div>
                 <p className="text-[15px] pt-12 font-light">
-                  I am Information and technology student. I consider myself a
-                  responsible and orderly person. I am looking forward to my
-                  first work experience.
+                  Full Stack Developer with 1 year of experience in building web applications using React, Next.js, Node.js, Express, MongoDB, and TypeScript. Skilled in developing REST APIs and responsive user interfaces.
                 </p>
               </div>
               <div>
                 <p className="text-[15px] font-light">
-                  To be a professional and to utilize my skills and knowledge to
-                  fulfill the requirements of the organization in customer
-                  service.
+                  Detail-oriented and responsible with strong problem-solving skills, eager to contribute and grow in a dynamic organization
                 </p>
               </div>
             </div>

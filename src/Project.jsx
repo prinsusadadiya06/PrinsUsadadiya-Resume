@@ -74,7 +74,7 @@ useLayoutEffect(() => {
         <>
             <Navbar />
 
-           <div className='bg-[#e6dace] overflow-x-hidden sm:pt-[170px] pt-[40px] sm:pb-[80px]'>
+           <div className='bg-[#e6dace] overflow-x-hidden md:pt-[100px] pt-[40px] sm:pb-[80px]'> 
                 <div className=' text-[30px] font-bold text-center mt-[90px] '>
                     <li ref={mainTitleRef} className='list-[square] list-inside text-[blue] text-[35px]'>
                         <span className='text-black '>Projects</span>

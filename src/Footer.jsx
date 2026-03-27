@@ -9,13 +9,14 @@ const Footer = () => {
 
     useEffect(() => {
         let ctx = gsap.context(() => {
-          
+
             gsap.from(footerRef.current, {
                 opacity: 0,
                 y: 50,
                 duration: 1.2,
                 ease: "power3.out"
             });
+
             gsap.from(".text-block", {
                 opacity: 0,
                 y: 30,
@@ -31,60 +32,80 @@ const Footer = () => {
                 ease: "back.out(1.7)",
                 stagger: 0.2
             });
+
         }, footerRef);
 
         return () => ctx.revert();
     }, []);
 
     return (
-        <div ref={footerRef} className='container-fluid'>
-            <div className="container flex sm:flex-row flex-col-reverse justify-between items-center pt-7">
+        <div ref={footerRef} className='container-fluid px-3 sm:px-0'>
+            <div className="container flex flex-col-reverse sm:flex-row justify-between items-center gap-6 sm:gap-0 pt-7">
+
+                {/* LEFT */}
                 <div>
-                    <p className='text-center'>© 2025 by Prins Usadadiya <br />
-                        Powered and secured by..</p>
+                    <p className='text-center text-[13px] sm:text-[14px] leading-relaxed'>
+                        © 2025 by Prins Usadadiya <br />
+                        Powered and secured by..
+                    </p>
                 </div>
-                <div className="sm:w-[44%] flex sm:flex-row flex-col items-center sm:justify-between">
+
+                {/* RIGHT */}
+                <div className="w-full sm:w-[44%] flex flex-col sm:flex-row items-center justify-between gap-6 sm:gap-0">
+
                     <div className='text-center text-block'>
-                        <p className='text-[20px] font-bold'>Write</p>
-                        <p className='text-[14px]'>prinsusadadiya210@gmail.com</p>
+                        <p className='text-[18px] sm:text-[20px] font-bold'>Write</p>
+                        <p className='text-[13px] sm:text-[14px] break-all'>
+                            prinsusadadiya210@gmail.com
+                        </p>
                     </div>
+
                     <div className='text-center text-block'>
-                        <p className='text-[20px] font-bold'>Call</p>
-                        <p className='text-[14px]'>+91 9510162453</p>
+                        <p className='text-[18px] sm:text-[20px] font-bold'>Call</p>
+                        <p className='text-[13px] sm:text-[14px]'>
+                            +91 9510162453
+                        </p>
                     </div>
+
                     <div className='text-center text-block'>
-                        <p className='text-[20px] font-bold'>Follow</p>
-                        <div className='flex gap-3 justify-center'>
+                        <p className='text-[18px] sm:text-[20px] font-bold'>Follow</p>
+
+                        <div className='flex gap-4 justify-center mt-2 flex-wrap'>
                             <a href='https://www.facebook.com/'>
-                                <FontAwesomeIcon 
-                                    icon={faFacebook} 
-                                    className='icons cursor-pointer text-[black] hover:text-[#0000ffcf]' 
+                                <FontAwesomeIcon
+                                    icon={faFacebook}
+                                    className='icons cursor-pointer text-[18px] sm:text-[20px] text-black hover:text-[#0000ffcf]'
                                     ref={el => iconsRef.current[0] = el}
                                 />
                             </a>
+
                             <a href='https://github.com/'>
-                                <FontAwesomeIcon 
-                                    icon={faGithub} 
-                                    className='icons cursor-pointer text-[black]' 
+                                <FontAwesomeIcon
+                                    icon={faGithub}
+                                    className='icons cursor-pointer text-[18px] sm:text-[20px] text-black'
                                     ref={el => iconsRef.current[1] = el}
                                 />
                             </a>
+
                             <a href="">
-                                <FontAwesomeIcon 
-                                    icon={faLinkedin} 
-                                    className='icons cursor-pointer text-[black] hover:text-[#0000ffcf]' 
+                                <FontAwesomeIcon
+                                    icon={faLinkedin}
+                                    className='icons cursor-pointer text-[18px] sm:text-[20px] text-black hover:text-[#0000ffcf]'
                                     ref={el => iconsRef.current[2] = el}
                                 />
                             </a>
+
                             <a href="https://www.instagram.com/_.prins.__1506/?igsh=aGhzNWt5YzRsM2gy#">
-                                <FontAwesomeIcon 
-                                    icon={faInstagram} 
-                                    className='icons cursor-pointer text-[black] hover:text-[#E1306C]' 
+                                <FontAwesomeIcon
+                                    icon={faInstagram}
+                                    className='icons cursor-pointer text-[18px] sm:text-[20px] text-black hover:text-[#E1306C]'
                                     ref={el => iconsRef.current[3] = el}
                                 />
                             </a>
                         </div>
+
                     </div>
+
                 </div>
             </div>
         </div>

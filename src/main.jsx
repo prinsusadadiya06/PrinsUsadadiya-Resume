@@ -7,12 +7,9 @@ import Contact from './Contact';
 import Project from './Project';
 import About from './About';
 import Resume from './Resume';
-
-
-
+import { Toaster } from 'sonner';
 
 let allpages = createHashRouter([
-
   {
     path: "/",
     element: <About />
@@ -21,12 +18,10 @@ let allpages = createHashRouter([
     path: "resume",
     element: <Resume />
   },
-
   {
     path: "project",
     element: <Project />
   },
-
   {
     path: "contact",
     element: <Contact />
@@ -37,10 +32,20 @@ let allpages = createHashRouter([
   }
 ]);
 
-
-
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={allpages} />
+    <>
+      <RouterProvider router={allpages} />
+      <Toaster
+        position="top-right"
+        richColors
+        offset="80px"
+        toastOptions={{
+          style: {
+            width: "280px",
+          },
+        }}
+      />
+    </>
   </StrictMode>,
 )
