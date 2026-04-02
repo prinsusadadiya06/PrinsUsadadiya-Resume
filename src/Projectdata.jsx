@@ -7,8 +7,17 @@ import img6 from '../img/ninom.png'
 import img7 from '../img/foodportfolio.png'
 import img8 from '../img/portfolio.png'
 import img9 from '../img/carwashing.png'
+import img10 from '../img/crickpluse.png'
 
 export let pr1 = [
+    {
+        url: img10,
+        title: "Crickpluse",
+        role: "Full Stack Developer",
+        detail: "Developed a full-stack cricket web application using the MERN stack (MongoDB, Express.js, React, Node.js). The platform provides live match updates, latest cricket news, team and match schedules. Implemented REST APIs for dynamic data handling and built a responsive, user-friendly interface with modern UI design. Ensured smooth performance and seamless user experience across devices.",
+        btn: "See Project",
+        path: "https://crickpluse.vercel.app/",
+    },
     {
         url: img8,
         title: "Personal Portfolio",
